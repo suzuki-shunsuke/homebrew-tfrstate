@@ -6,22 +6,22 @@ class Tfrstate < Formula
   desc "Find directories where changed terraform_remote_state data source is used
 "
   homepage "https://github.com/suzuki-shunsuke/tfrstate"
-  version "0.1.3"
+  version "0.1.4"
   license "MIT"
 
   on_macos do
-    on_intel do
-      url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.3/tfrstate_darwin_amd64.tar.gz"
-      sha256 "3a0b4b0807cb738d7151093d57d3b30e5d2f2d94d0da91de4a6ff31572bd4138"
+    if Hardware::CPU.intel?
+      url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.4/tfrstate_darwin_amd64.tar.gz"
+      sha256 "35cb659d6d90bed4c3a23ede021b3ca8b40b9d3554d5792c48c7495649079c1d"
 
       def install
         bin.install "tfrstate"
         generate_completions_from_executable(bin/"tfrstate", "completion", shells: [:bash, :zsh, :fish])
       end
     end
-    on_arm do
-      url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.3/tfrstate_darwin_arm64.tar.gz"
-      sha256 "a15db1946de7ff98dc5bad8888fbd7243d27a77a21f9a7b961d06072df2fe6a2"
+    if Hardware::CPU.arm?
+      url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.4/tfrstate_darwin_arm64.tar.gz"
+      sha256 "a1d40bee857ddff185d828ffddfcc27b9de2c60f0ac1bdfe35f3f5762caef3d7"
 
       def install
         bin.install "tfrstate"
@@ -31,10 +31,10 @@ class Tfrstate < Formula
   end
 
   on_linux do
-    on_intel do
+    if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.3/tfrstate_linux_amd64.tar.gz"
-        sha256 "b00efccfdfe41985aab7daac3f209c6a4fa58546524915b7513d061b6b1c3deb"
+        url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.4/tfrstate_linux_amd64.tar.gz"
+        sha256 "3b2b0fc1b858a98d27b16a0b8947601740c3b39f8056d86780ef6244dcb46cf6"
 
         def install
           bin.install "tfrstate"
@@ -42,10 +42,10 @@ class Tfrstate < Formula
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.3/tfrstate_linux_arm64.tar.gz"
-        sha256 "ba41f88882d6df28a3cf83edfbc6c6961efc5195fde5c3ee68f58ff750593d3e"
+        url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.4/tfrstate_linux_arm64.tar.gz"
+        sha256 "3b34b2c0e9a5343816ab2f02393d423cc5396bf005d8afd6548e5dc8d06a5b67"
 
         def install
           bin.install "tfrstate"
