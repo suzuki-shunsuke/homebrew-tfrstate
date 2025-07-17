@@ -3,7 +3,7 @@ cask "tfrstate" do
   desc "Find directories where changed terraform_remote_state data source is used
 "
   homepage "https://github.com/suzuki-shunsuke/tfrstate"
-  version "0.1.5"
+  version "0.1.6"
 
   livecheck do
     skip "Auto-generated on release."
@@ -13,23 +13,29 @@ cask "tfrstate" do
 
   on_macos do
     on_intel do
-      url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.5/tfrstate_darwin_amd64.tar.gz"
-      sha256 "22eba7659481193768c6302f073690b36cd8b1c45be3c2be06f1f95cf3b03a7c"
+      url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.6/tfrstate_darwin_amd64.tar.gz"
+      sha256 "bad1201bd193494a01d4e1bd911e54d0c288611347bd516cae974d7dacc7e6d2"
     end
     on_arm do
-      url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.5/tfrstate_darwin_arm64.tar.gz"
-      sha256 "de03b4c81a0c6b20d99e223ae95ceb2b90f3d2587c59b2bcaa1bfa90efbf9899"
+      url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.6/tfrstate_darwin_arm64.tar.gz"
+      sha256 "a38551c622e4aac4ffd88777f657f572a8b4b2ebab31029c61b734214883e9dd"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.5/tfrstate_linux_amd64.tar.gz"
-      sha256 "66cd900a27a572c604f22822ab7c9c9b1b66a9b42f1fba4e8a5423fb5ab0c726"
+      url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.6/tfrstate_linux_amd64.tar.gz"
+      sha256 "5a827c6a9fd04beea70532c0f896271c501dfbd562ecb0e82df7472349f43b74"
     end
     on_arm do
-      url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.5/tfrstate_linux_arm64.tar.gz"
-      sha256 "831ea40c6e57886a130b9eb86b4b5a07584d450203da1b457a1efa679ba98e21"
+      url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.6/tfrstate_linux_arm64.tar.gz"
+      sha256 "9d39b391a621e0de4f1596bc6f13da59baefcda2f66f4e32ea5156397e1d213d"
+    end
+  end
+
+  postflight do
+    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/tfrstate"]
     end
   end
 
