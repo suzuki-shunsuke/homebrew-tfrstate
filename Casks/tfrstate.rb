@@ -3,7 +3,7 @@ cask "tfrstate" do
   desc "Find directories where changed terraform_remote_state data source is used
 "
   homepage "https://github.com/suzuki-shunsuke/tfrstate"
-  version "0.1.6"
+  version "0.1.7"
 
   livecheck do
     skip "Auto-generated on release."
@@ -13,23 +13,23 @@ cask "tfrstate" do
 
   on_macos do
     on_intel do
-      url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.6/tfrstate_darwin_amd64.tar.gz"
-      sha256 "bad1201bd193494a01d4e1bd911e54d0c288611347bd516cae974d7dacc7e6d2"
+      url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.7/tfrstate_darwin_amd64.tar.gz"
+      sha256 "dbccbd2d9f1b55fd1ebdfdcef8465cfa0fb355fe6bf96f4ff6a94a3f624b8914"
     end
     on_arm do
-      url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.6/tfrstate_darwin_arm64.tar.gz"
-      sha256 "a38551c622e4aac4ffd88777f657f572a8b4b2ebab31029c61b734214883e9dd"
+      url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.7/tfrstate_darwin_arm64.tar.gz"
+      sha256 "4c3c97b9abf4d112d5226a65b72098399890c60146d6fc1e8879e0b2f0665929"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.6/tfrstate_linux_amd64.tar.gz"
-      sha256 "5a827c6a9fd04beea70532c0f896271c501dfbd562ecb0e82df7472349f43b74"
+      url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.7/tfrstate_linux_amd64.tar.gz"
+      sha256 "00e258a312e5a582a0dd396a11e47b278d5b8f2ea0684f3813dc85426b034dd5"
     end
     on_arm do
-      url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.6/tfrstate_linux_arm64.tar.gz"
-      sha256 "9d39b391a621e0de4f1596bc6f13da59baefcda2f66f4e32ea5156397e1d213d"
+      url "https://github.com/suzuki-shunsuke/tfrstate/releases/download/v0.1.7/tfrstate_linux_arm64.tar.gz"
+      sha256 "aafe9deddb1fd0e64f36b944cb27ddb3ad9d7b08097c97a94aa6655a62d9e8ac"
     end
   end
 
